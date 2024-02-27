@@ -119,7 +119,7 @@ export default class BuildApplication extends Command {
 
 Make sure you defined \`io.sunodo.sdk_version\` label at your Dockerfile.
 
-It shoud be >= ${SUNODO_DEFAULT_SDK_VERSION}.
+It should be >= ${SUNODO_DEFAULT_SDK_VERSION}.
 
 Eg.:
 
@@ -264,7 +264,7 @@ LABEL io.sunodo.sdk_version=${SUNODO_DEFAULT_SDK_VERSION}
             } else if (variable.startsWith("PATH=")) {
                 return true;
             } else {
-                this.warn(`ommiting environment variable ${variable}`);
+                this.warn(`omitting environment variable ${variable}`);
                 return false;
             }
         });
@@ -324,7 +324,7 @@ LABEL io.sunodo.sdk_version=${SUNODO_DEFAULT_SDK_VERSION}
         // use pre-existing image or build dapp image
         const appImage = flags["from-image"] || (await this.buildImage(flags));
 
-        // prapare .sunodo directory
+        // prepare .sunodo directory
         await fs.emptyDir(SUNODO_PATH); // XXX: make it less error prone
 
         // get and validate image info
